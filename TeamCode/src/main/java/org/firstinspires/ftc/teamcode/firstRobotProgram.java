@@ -14,7 +14,10 @@ public class firstRobotProgram extends LinearOpMode {
 
         while (opModeIsActive()) {
             motor.setPower(0.1);
-            System.out.println(motor.getCurrentPosition());
+            long encoderPosition = motor.getCurrentPosition();
+            System.out.println("encoder position");
+            telemetry.addData("position",encoderPosition);
+            telemetry.update();
         }
 
     }
